@@ -1,5 +1,4 @@
 buildscript {
-    // TODO: YK: This has to be removed, since repositories are enabled in global settings
     repositories {
         mavenCentral()
     }
@@ -11,11 +10,6 @@ buildscript {
 
 apply plugin: "groovy"
 apply plugin: "org.springframework.boot"
-
-// TODO: YK: This has to be removed, since repositories are enabled in global settings
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.4.8"
