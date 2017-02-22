@@ -8,22 +8,21 @@ buildscript {
     }
 }
 
-apply plugin: "groovy"
-apply plugin: "org.springframework.boot"
+allprojects {
+    apply plugin: "groovy"
+    apply plugin: "org.springframework.boot"
 
-repositories {
-    mavenCentral()
-}
+    group = "solutions.lightprocessing"
+    version = "0.0.1"
 
-dependencies {
-    compile "org.codehaus.groovy:groovy-all:2.4.8"
-    compile "org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE"
+    repositories {
+        mavenCentral()
+    }
 
-    testCompile "org.testng:testng:6.10"
-    testCompile "org.mockito:mockito-core:2.7.6"
-}
+    dependencies {
+        compile "org.codehaus.groovy:groovy-all:2.4.8"
 
-jar {
-    baseName = rootProject.name
-    version = rootProject.version
+        testCompile "org.testng:testng:6.10"
+        testCompile "org.mockito:mockito-core:2.7.6"
+    }
 }
