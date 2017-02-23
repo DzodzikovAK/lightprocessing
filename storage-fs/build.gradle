@@ -16,6 +16,10 @@ dependencies {
     testCompile "org.springframework.boot:spring-boot-starter-test:1.5.1.RELEASE"
 }
 
+bootRepackage {
+    enabled = false
+}
+
 test {
     useTestNG()
 }
