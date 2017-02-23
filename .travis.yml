@@ -1,8 +1,7 @@
 language: groovy
 
 before_install:
-  - cp readme.md test.md
-  - ls -la
+  - cp gradle/init.gradle $HOME/.gradle/init.gradle
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
