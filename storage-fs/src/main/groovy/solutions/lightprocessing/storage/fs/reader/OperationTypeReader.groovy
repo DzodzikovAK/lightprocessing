@@ -6,13 +6,18 @@ import org.springframework.core.io.ResourceLoader
 import org.springframework.stereotype.Component
 import solutions.lightprocessing.storage.fs.domain.OperationType
 
-@Component
 class OperationTypeReader {
+    final String pathToOperations
+
     @Autowired
     ResourceLoader resourceLoader
 
+    OperationTypeReader(String pathToOperations) {
+        this.pathToOperations = pathToOperations
+    }
+
     Map<String, OperationType> readTypesFromFilesystem() {
-        resourceLoader.getResource("classpath:operation-types").file.listFiles()
+        resourceLoader.getResource(pathToOperations).file.listFiles()
                 .collectEntries {[ it.name, buildType(it) ]}
     }
 
